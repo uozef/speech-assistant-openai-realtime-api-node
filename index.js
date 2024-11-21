@@ -50,9 +50,9 @@ fastify.get('/', async (request, reply) => {
 fastify.all('/incoming-call', async (request, reply) => {
  const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
                           <Response>
-                           <Say>Hello,Hello, Hello,Welcome to Clanz smart Assistant</Say>
+                           <Say>Hello,Welcome to Clanz smart Assistant</Say>
                               <Pause length="1"/>
-                              <Say>Connecting you to next available AI agent ...</Say>
+                              <Say>Say Hi to Clanz AI agent ...</Say>
                               <Connect>
                                   <Stream url="wss://${request.headers.host}/media-stream" />
                               </Connect>
@@ -113,7 +113,7 @@ fastify.register(async (fastify) => {
                     content: [
                         {
                             type: 'input_text',
-                            text: 'Greet the user with "Hello there! I am an AI voice assistant powered by Twilio and the OpenAI Realtime API. You can ask me for facts, jokes, or anything you can imagine. How can I help you?"'
+                            text: 'Greet the user with "Hello there! I am an AI voice assistant powered by Clanz. You can ask me for facts, jokes, or anything you can imagine. How can I help you?"'
                         }
                     ]
                 }
@@ -168,7 +168,7 @@ fastify.register(async (fastify) => {
 
         // Open event for OpenAI WebSocket
         openAiWs.on('open', () => {
-            console.log('Connected to the OpenAI Realtime API');
+            console.log('Connected to the AI');
             setTimeout(initializeSession, 100);
         });
 
