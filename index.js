@@ -50,7 +50,7 @@ fastify.get('/', async (request, reply) => {
 fastify.all('/incoming-call', async (request, reply) => {
  const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
                           <Response>
-                              <Say>Welcome to Clanz, AI Powered Smart Assistant</Say>
+                              <Say>Hello,Welcome to Clanz, AI Powered Smart Assistant</Say>
                               <Pause length="1"/>
                               <Say>Please wait while we connect you!</Say>
                               <Connect>
