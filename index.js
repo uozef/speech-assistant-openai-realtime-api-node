@@ -48,15 +48,16 @@ fastify.get('/', async (request, reply) => {
 // Route for Twilio to handle incoming calls
 // <Say> punctuation to improve text-to-speech translation
 fastify.all('/incoming-call', async (request, reply) => {
-    const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
+ const twimlResponse = `<?xml version="1.0" encoding="UTF-8"?>
                           <Response>
-                              <Say>Hi, I AI</Say>
+                              <Say>Please wait while we connect your call to the A. I. voice assistant, powered by Twilio and the Open-A.I. Realtime API</Say>
                               <Pause length="1"/>
-                              <Say>How can I help?</Say>
+                              <Say>O.K. you can start talking!</Say>
                               <Connect>
                                   <Stream url="wss://${request.headers.host}/media-stream" />
                               </Connect>
                           </Response>`;
+
 
     reply.type('text/xml').send(twimlResponse);
 });
